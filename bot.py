@@ -21,7 +21,7 @@ from telegram.ext import (
 
 # ================= SOZLAMALAR =================
 
-TOKEN = "8786009673:AAH6z7GtOzNyfCac7CM87fcPsJtKo-W3XR8"
+TOKEN = "8786009673:AAEwVIIEIHRXHXnEI7L-XdPA6QHRaVnHXDo"
 ADMIN_IDS = [5538156384]
 
 FREE_DELIVERY_FROM = 120000
