@@ -2,7 +2,8 @@ import os
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-TOKEN = os.getenv("8786009673:AAH6z7GtOzNyfCac7CM87fcPsJtKo-W3XR8")
+# Tokenni to‘g‘ridan-to‘g‘ri qo‘ying (yoki environment variable ishlating)
+TOKEN = "8786009673:AAH6z7GtOzNyfCac7CM87fcPsJtKo-W3XR8"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Salom! Bot ishlayapti 🚀")
@@ -19,11 +20,10 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 def main():
     if not TOKEN:
-        print("XATO: TELEGRAM_BOT_TOKEN topilmadi!")
+        print("XATO: TOKEN topilmadi!")
         return
 
     app = Application.builder().token(TOKEN).build()
-
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", help_command))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
